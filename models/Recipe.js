@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 class Recipe extends Model {}
@@ -16,7 +17,7 @@ Recipe.init(
       allowNull: false,
     },
     ingredients: {
-      type: DataTypes.TEXT,
+      type: DataTypes.JSON,
       allowNull: false,
     },
     instructions: {
@@ -41,4 +42,3 @@ Recipe.init(
 );
 
 module.exports = Recipe;
-
