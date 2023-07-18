@@ -13,14 +13,19 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const project of projectData) {
-    await Project.create({
-      ...project,
+  const recipe = await User.bulkCreate(recipeData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  for (const recipe of recipeData) {
+    await Recipe.create({
+      ...recipe,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
 
-  process.exit(0);
+  process.exit(0)
 };
 
 seedDatabase();

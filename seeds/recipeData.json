@@ -1,17 +1,8 @@
 [
-  {
-    "name": "Music Near Me",
-    "description": "A mobile app that will send you notifications whenever a concert is playing in your area."
-  
-  },
-  {
-    "name": "The Ultimate Tech Quiz",
-    "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!"
-    
-  },
-  {
-    "name": "Roll 'Em Up",
-    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes."
-   
-  }
+{
+"name": "Cheeseburger",
+"ingredients": ["Beef", "cheese", "onions", "lettuce", "pickles", "tomatoes", "bread"],
+"instructions": "Take quarter cup of beef and roll into meatballs. Flatten them into patties and season to liking. Cook on grill or stovetop for 8 mins flipping midway through. Once almost cooked place cheese of choice on top of burger and let melt. Assemble bun and toppings. Grill buns on flat side for two minutes. Take condiments and put onto grilled side of bun. Put lettuce and tomato on top side of bun.  Place burger on bottom bun. Place pickle on top of burger. Combine both halves. Enjoy",
+"user_id": 123
+}
 ]
