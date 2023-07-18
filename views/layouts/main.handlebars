@@ -3,8 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
+  <link rel="icon"  href="/groupProject-2/DishSwap/public/images/restaurant_FILL0_wght400_GRAD0_opsz48.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Project!</title>
+  <title>DishSwap</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -13,10 +14,23 @@
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
-        <span role="img" aria-label="money">💸</span>
+        <span role="img" aria-label="money"></span>
         <a href="/">DishSwap</a>
       </h1>
-      <nav>
+
+  <header>
+  <div class="search-box">
+    <input type="text" placeholder="Search for Recipe &#x1F50D" >
+  </div>
+  </header>
+
+  <button class="login" id="main-login">
+    <a href="/login">Create Account/Login</a>
+
+  </button>
+
+{{!-- 
+       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/profile">profile</a> |
@@ -24,12 +38,17 @@
         {{else}}
         <a href="/login">login</a>
         {{/if}}
-      </nav>
+      </nav>  --}}
     </header>
-    <main class="container container-fluid mt-5">
+     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
-    </main>
+
+    </main> 
+     <main class="image1" id="main-image">
+    <img src="/groupProject-2/DishSwap/public/images/ella-olsson-rD3YrnhTmf0-unsplash.jpg"> 
+    </main> 
+ 
     <footer>
       
     </footer>
