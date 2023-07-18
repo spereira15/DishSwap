@@ -79,4 +79,14 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/recipeCreate', (req, res) => {
+  // If the user is not logged in, redirect the request to another route
+  if (!req.session.logged_in) {
+    res.redirect('/login');
+    return;
+  }
+
+  res.render('recipeCreate');
+});
+
 module.exports = router;
