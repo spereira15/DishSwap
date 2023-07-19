@@ -46,8 +46,24 @@
 
     </main> 
      <main  id="main-image">
-    <img src="/images/ella-olsson-rD3YrnhTmf0-unsplash.jpg">
+   <img src="/images/ella-olsson-rD3YrnhTmf0-unsplash.jpg" style="max-width: 100%; max-height: 750px; width: 100%;">
     </main> 
+
+    <section class="popular-recipes">
+  <div class="container">
+    <h2>Popular Recipes</h2>
+    <div class="recipe-boxes">
+      {{#each popularRecipes}}
+      <div class="recipe-box">
+        <img src="{{image}}" alt="{{name}}">
+        <h3>{{name}}</h3>
+        <p>{{description}}</p>
+        <a href="/recipes/{{id}}">View Recipe</a>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>
  
     <footer>
       

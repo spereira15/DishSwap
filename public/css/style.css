@@ -23,4 +23,71 @@ header, .project:not(:last-child) {
   margin-left: -5px;
 }
 
+/* Default styles for all screen sizes */
+img {
+  max-width: 100%;
+  height: 750;
+}
 
+/* Media query for screens with a maximum width of 768px (e.g., tablets and mobile phones) */
+@media (max-width: 768px) {
+  main.container {
+    padding: 10px;
+  }
+  
+  /* Add more styles for smaller screens here if needed */
+}
+
+/* Styles for popular recipe section */
+.popular-recipes {
+  padding: 30px 0;
+  background-color: #f9f9f9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.recipe-boxes {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.recipe-box {
+  width: 30%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-box img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.recipe-box h3 {
+  margin-top: 10px;
+}
+
+.recipe-box p {
+  margin: 10px 0;
+}
+
+.recipe-box a {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.recipe-box a:hover {
+  background-color: #0056b3;
+}
