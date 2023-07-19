@@ -8,6 +8,7 @@
   <title>DishSwap</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
 </head>
 
 <body>
@@ -23,23 +24,59 @@
     <input type="text" placeholder="Search for Recipe &#x1F50D" >
   </div>
   </header>
-
-  <button class="login" id="main-login">
-    <a href="/login">Create Account/Login</a>
-
-  </button>
-
+  
 {{!-- 
+  <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="fa-duotone fa-circle-chevron-down fa-lg" style="--fa-primary-color: #0735ed; --fa-secondary-color: #9fa0a3;"></i>
+    
+  </button>
+  <div class="dropdown-content" aria-labelledby="dropdownMenuButton">
+    <a href="#">Menu Item 1</a>
+    <a href="#">Menu Item 2</a>
+    <a href="#">Menu Item 3</a>
+    <!-- Add more menu items as needed -->
+  </div>
+</div>
+
+
        <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+        <button class="no-button" id="logout">Create Account/Login</button>
+        <a href="/profile">profile</a> |       
         {{else}}
-        <a href="/login">login</a>
+        <a href="/login">Create Account/Login</a>
+
         {{/if}}
-      </nav>  --}}
+
+         {{!-- {{#if logged_in}}
+        <a href="/profile">profile</a> |
+        <button class="no-button" id="logout">Create Account/Login</button>
+        {{else}}
+        <a href="/login">Create Account/Login</a>
+        {{/if}} --}}
+      {{!-- </nav> 
+    {{!-- </header> --}} --}} 
+
+     <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa-duotone fa-circle-chevron-down fa-lg" style="--fa-primary-color: #0735ed; --fa-secondary-color: #9fa0a3;"></i>
+        </button>
+        <div class="dropdown-content" aria-labelledby="dropdownMenuButton">
+          {{#if logged_in}}
+            <a href="/profile">Profile</a>
+            <button class="no-button" id="logout">Logout</button>
+          {{else}}
+            <a href="/login">Login</a>
+            <a href="/create-account">Create Account</a>
+          {{/if}}
+        </div>
+      </div>
     </header>
+
+
+
      <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
