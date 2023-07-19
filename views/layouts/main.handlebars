@@ -24,7 +24,20 @@
     <input type="text" placeholder="Search for Recipe &#x1F50D" >
   </div>
   </header>
-
+  
+{{!-- 
+  <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="fa-duotone fa-circle-chevron-down fa-lg" style="--fa-primary-color: #0735ed; --fa-secondary-color: #9fa0a3;"></i>
+    
+  </button>
+  <div class="dropdown-content" aria-labelledby="dropdownMenuButton">
+    <a href="#">Menu Item 1</a>
+    <a href="#">Menu Item 2</a>
+    <a href="#">Menu Item 3</a>
+    <!-- Add more menu items as needed -->
+  </div>
+</div>
 
 
        <nav>
@@ -43,8 +56,27 @@
         {{else}}
         <a href="/login">Create Account/Login</a>
         {{/if}} --}}
-      </nav> 
+      {{!-- </nav> 
+    {{!-- </header> --}} --}} 
+
+     <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa-duotone fa-circle-chevron-down fa-lg" style="--fa-primary-color: #0735ed; --fa-secondary-color: #9fa0a3;"></i>
+        </button>
+        <div class="dropdown-content" aria-labelledby="dropdownMenuButton">
+          {{#if logged_in}}
+            <a href="/profile">Profile</a>
+            <button class="no-button" id="logout">Logout</button>
+          {{else}}
+            <a href="/login">Login</a>
+            <a href="/create-account">Create Account</a>
+          {{/if}}
+        </div>
+      </div>
     </header>
+
+
+
      <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
