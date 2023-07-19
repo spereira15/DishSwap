@@ -1,51 +1,52 @@
-<div class="text-center">
-  <h2>{{name}}</h2>
-  <p>{{{get_emoji}}}</p>
-  <p>{{description}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <span for="img" aria-label="money">💲</span>
-    <span class="dollar-amount">{{format_amount needed_funding}}</span>
-    needed
-  </p>
-  <p>
-    <button class="btn btn-primary">Fund this Project!</button>
-  </p>
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
 </div>
 
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New Recipe:</h3>
 
-{{!-- <div class="text-center">
-  {{#if isEditing}}
-    <h2>Edit Recipe</h2>
-  {{else}}
-    <h2>Create Recipe</h2>
+    <form class="form new-project-form">
+      <div class="form-group">
+        <label for="recipe-name">Recipe name:</label>
+        <input class="form-input" type="text" id="recipe-name" name="recipe-name" />
+      </div>
+
+      <div class="form-group">
+        <label for="recipe-desc">Description:</label>
+        <textarea class="form-input" id="recipe-desc" name="recipe-desc"></textarea>
+      </div>
+
+    
+      <div class="form-group">
+        <label for="recipe-ingredients">Ingredients:</label>
+        <textarea class="form-input" id="recipe-ingredients" name="recipe-ingredients"></textarea>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if projects.length}}
+  <div class="col-md-6 project-list">
+    <h3>Current Recipes:</h3>
+
+    {{#each projects as |project|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
   {{/if}}
+</div>
 
-  <form class="form recipe-form" method="POST" action="{{action}}">
-    <div class="form-group">
-      <label for="name">Name:</label>
-      <input class="form-input" type="text" id="name" name="name" value="{{name}}" />
-    </div>
-    <div class="form-group">
-      <label for="emoji">Emoji:</label>
-      <input class="form-input" type="text" id="emoji" name="emoji" value="{{emoji}}" />
-    </div>
-    <div class="form-group">
-      <label for="description">Description:</label>
-      <textarea class="form-input" id="description" name="description">{{description}}</textarea>
-    </div>
-    <div class="form-group">
-      <label for="needed_funding">Needed Funding:</label>
-      <input class="form-input" type="number" id="needed_funding" name="needed_funding" value="{{needed_funding}}" />
-    </div>
-    <div class="form-group">
-      <button class="btn btn-primary" type="submit">
-        {{#if isEditing}}
-          Update Recipe
-        {{else}}
-          Create Recipe
-        {{/if}}
-      </button>
-    </div>
-  </form>
-</div> --}}
+<script src="./js/profile.js"></script>
