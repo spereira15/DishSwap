@@ -6,8 +6,9 @@
   <link rel="icon"  href="/groupProject-2/DishSwap/public/images/restaurant_FILL0_wght400_GRAD0_opsz48.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DishSwap</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
   <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="custom.css"> 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
 </head>
 
@@ -20,63 +21,44 @@
       </h1>
 
   <header>
-  <div class="search-box">
-    <input type="text" placeholder="Search for Recipe &#x1F50D" >
-  </div>
+ <div class="search-box">
+  <input type="text" id="searchInput" placeholder="Search for Recipe" >
+  <button id="searchButton"><i class="fas fa-search"></i></button> <!-- Assuming you are using Font Awesome for the magnifying glass icon -->
+</div>
   </header>
   
-{{!-- 
-  <div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <i class="fa-duotone fa-circle-chevron-down fa-lg" style="--fa-primary-color: #0735ed; --fa-secondary-color: #9fa0a3;"></i>
-    
-  </button>
-  <div class="dropdown-content" aria-labelledby="dropdownMenuButton">
-    <a href="#">Menu Item 1</a>
-    <a href="#">Menu Item 2</a>
-    <a href="#">Menu Item 3</a>
-    <!-- Add more menu items as needed -->
-  </div>
-</div>
+
 
 
        <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <button class="no-button" id="logout">Create Account/Login</button>
-        <a href="/profile">profile</a> |       
-        {{else}}
-        <a href="/login">Create Account/Login</a>
-
-        {{/if}}
-
-         {{!-- {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">Create Account/Login</button>
-        {{else}}
-        <a href="/login">Create Account/Login</a>
-        {{/if}} --}}
-      {{!-- </nav> 
-    {{!-- </header> --}} --}} 
-
-     <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa-duotone fa-circle-chevron-down fa-lg" style="--fa-primary-color: #0735ed; --fa-secondary-color: #9fa0a3;"></i>
-        </button>
-        <div class="dropdown-content" aria-labelledby="dropdownMenuButton">
-          {{#if logged_in}}
-            <a href="/profile">Profile</a>
-            <button class="no-button" id="logout">Logout</button>
-          {{else}}
-            <a href="/login">Login</a>
-            <a href="/create-account">Create Account</a>
-          {{/if}}
-        </div>
+ 
+{{#if logged_in}}
+  <div class="dropdown is-hoverable is-right"  style="position: relative;">
+    <div class="dropdown-trigger">
+      <button class="button" class="is" aria-haspopup="true" aria-controls="dropdown-menu4">
+        <i class="fa-duotone fa-circle-chevron-down fa-lg" style="--fa-primary-color: #0735ed; --fa-secondary-color: #9fa0a3;"></i>
+      </button>
+    </div>
+    <div class="dropdown-menu" id="dropdown-menu4" role="menu" style="position: absolute; right: 0;">
+      <div class="dropdown-content">
+        <a href="/recipeCreate" class="dropdown-item">Create Recipe</a>
+        <a href="/profile" class="dropdown-item">Profile</a>
+        <button class="no-button dropdown-item" id="logout">Logout</button>
       </div>
+    </div>
+  </div>
+{{else}}
+  {{!-- Button for non-logged-in users --}}
+  <button class="no-button" id="login-button">
+    <a href="/login">Create Account/Login</a>
+  </button>
+{{/if}}
+
+      </nav> 
     </header>
 
 
-
+    
      <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
@@ -110,7 +92,13 @@
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
+ 
+  
   {{/if}}
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/js/bulma.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+  <script src="/groupProject-2/DishSwap/public/js/main.js"></script>
 </body>
 
 </html>
