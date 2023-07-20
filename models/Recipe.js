@@ -17,11 +17,11 @@ Recipe.init(
       allowNull: false,
     },
     ingredients: {
-      type: DataTypes.JSON,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     instructions: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     user_id: {
