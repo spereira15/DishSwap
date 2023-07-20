@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/recipes/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const recipeData = await Recipe.findByPk(req.params.id);
 
@@ -32,7 +32,7 @@ router.get('/recipes/:id', async (req, res) => {
   }
 });
 
-router.post('/recipes', withAuth, async (req, res) => {
+router.post('/create', withAuth, async (req, res) => {
   try {
     const newRecipe = await Recipe.create({
       ...req.body,
@@ -45,7 +45,7 @@ router.post('/recipes', withAuth, async (req, res) => {
   }
 });
 
-router.delete('/recipes/:id', withAuth, async (req, res) => {
+router.delete('/delete/:id', withAuth, async (req, res) => {
   try {
     const recipeData = await Recipe.destroy({
       where: {
