@@ -89,4 +89,24 @@ router.get('/recipeCreate', (req, res) => {
   res.render('recipeCreate');
 });
 
+router.get('/recipe/:id', async (req, res) => {
+  try {
+    const recipeId = req.params.id;
+    const recipeData = await Recipe.findByPk(recipeId);
+
+    if (!recipeData) {
+      // Handle the case when the recipe with the given ID is not found
+      return res.status(404).send('Recipe not found');
+    }
+
+    // Convert the Sequelize model instance to a plain object
+    const recipe = recipeData.get({ plain: true });
+
+    // Render the recipe.hbs template and pass the recipe object as context
+    res.render('recipe', { recipe });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
