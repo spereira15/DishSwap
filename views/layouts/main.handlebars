@@ -8,36 +8,35 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href=".css/custom.css">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
 </head>
 <body>
-  <div class="flex-column justify-space-around">
+  <div class="flex-column justify-space-around" id="nav-div">
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
-        <a href="/">DishSwap</a>
+        <a href="/">🍽️ DishSwap</a>
       </h1>
   <header>
- <div class="search-box">
-  <input type="text" id="searchInput" placeholder="Search for Recipe" >
-  <button id="searchButton"><i class="fas fa-search"></i></button> <!-- Assuming you are using Font Awesome for the magnifying glass icon -->
-</div>
+    <h2>Share your favorite recipes!</h2>
   </header>
        <nav>
 {{#if logged_in}}
-  <div class="dropdown is-hoverable is-right"  style="position: relative;">
-    <div class="dropdown-trigger">
-      <button class="button" class="is" aria-haspopup="true" aria-controls="dropdown-menu4">
-        <i class="fa-duotone fa-circle-chevron-down fa-lg" style="--fa-primary-color: #0735ED; --fa-secondary-color: #9FA0A3;"></i>
-      </button>
-    </div>
-    <div class="dropdown-menu" id="dropdown-menu4" role="menu" style="position: absolute; right: 0;">
-      <div class="dropdown-content">
-        <a href="/recipeCreate" class="dropdown-item">Create Recipe</a>
-        <a href="/profile" class="dropdown-item">Profile</a>
-        <button class="no-button dropdown-item" id="logout">Logout</button>
-      </div>
+  <div class="dropdown is-hoverable is-right" style="position: relative;">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+      <i class="fas fa-circle-chevron-down fa-lg" style="--fa-primary-color: #0735ED; --fa-secondary-color: #9FA0A3;"></i>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu4" role="menu" style="position: absolute; right: 0;">
+    <div class="dropdown-content">
+      <a href="/recipeCreate" class="dropdown-item">Create Recipe</a>
+      <a href="/profile" class="dropdown-item">Profile</a>
+      <button class="no-button dropdown-item" id="logout">Logout</button>
     </div>
   </div>
+</div>
+
 {{else}}
   {{!-- Button for non-logged-in users --}}
   <button class="no-button" id="login-button">
