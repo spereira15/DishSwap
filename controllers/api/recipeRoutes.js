@@ -2,7 +2,37 @@ const router = require('express').Router();
 const { Recipe } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
+  try {
+    const recipeData = await Recipe.findAll();
+
+    const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+
+    res.render('homepage', {
+      recipes,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/recipes/:id', async (req, res) => {
+  try {
+    const recipeData = await Recipe.findByPk(req.params.id);
+
+    const recipe = recipeData.get({ plain: true });
+
+    res.render('recipe', {
+      recipe,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.post('/recipes', withAuth, async (req, res) => {
   try {
     const newRecipe = await Recipe.create({
       ...req.body,
@@ -15,7 +45,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/recipes/:id', withAuth, async (req, res) => {
   try {
     const recipeData = await Recipe.destroy({
       where: {

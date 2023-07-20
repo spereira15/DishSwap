@@ -8,8 +8,8 @@
   <div class="col-md-6">
     <h3>Create a New Recipe:</h3>
 
-    <form class="form new-project-form">
-      <div class="form-group">
+    <form class="form new-recipe-form">
+            <div class="form-group">
         <label for="recipe-name">Recipe name:</label>
         <input class="form-input" type="text" id="recipe-name" name="recipe-name" />
       </div>
@@ -31,17 +31,17 @@
     </form>
   </div>
 
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
+  {{#if recipes.length}}
+  <div class="col-md-6 recipe-list">
     <h3>Current Recipes:</h3>
 
-    {{#each projects as |project|}}
+    {{#each recipes as |recipe|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+        <h4><a href="/recipe/{{recipe.id}}">{{recipe.name}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{recipe.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
@@ -49,4 +49,5 @@
   {{/if}}
 </div>
 
-<script src="./js/profile.js"></script>
+<script src="./js/recipeCreate.js"></script>
+
