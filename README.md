@@ -19,11 +19,7 @@ DishSwap is a web application that allows users to post, explore, rate, and comm
 
 ## Link
 
-Link to the website: 
-
-## Usage
-
-...
+Link to the website: https://dishswap-25fb9a4acadd.herokuapp.com/login
 
 ## Authors
 
